@@ -67,7 +67,7 @@ Ví dụ: chỉ thị #include cho phép ghép thêm mã chương trình của m
   
 <details>
   <summary> B3: MACRO - FUNCTION </summary>
-  
+    
   # B3: MACRO - FUNCTION
 
 ### Macro:
@@ -88,11 +88,99 @@ Ví dụ: chỉ thị #include cho phép ghép thêm mã chương trình của m
 |Macro thường được dùng để thay thế các đoạn code nhỏ hay sử dụng trong chương trình|Function thường được dùng cho các đoạn code lớn|
 |Size của file chương trình chứa macro sẽ lớn hơn function|Nhỏ hơn|
 |Tốc độ chương trình nhanh hơn|Chậm hơn|
-</deatails>
-
+  </details>
+  
 <details>
   <summary> B4: THAO TÁC BIT </summary>
   
+  # B4: THAO TÁC BIT
+
+### Phép AND (&): giống phép nhân
+
+|A|B|A&B|
+|-|-|--|
+|0|0|0|
+|0|1|0|
+|1|0|0|
+|1|1|1|
+
+### Phép OR (|): giống phép cộng
+
+|A|B|A OR B|
+|-|-|--|
+|0|0|0|
+|0|1|1|
+|1|0|1|
+|1|1|1|
+
+### Phép NOT (~):
+
+|A|~A|
+|-|-|
+|0|1|
+|1|0|
+
+### Phép XOR (^): a, b giống nhau => 0, khác nhau => 1
+
+|A|B|A^B|
+|-|-|--|
+|0|0|0|
+|0|1|1|
+|1|0|1|
+|1|1|0|
+
+### Dịch trái (<<): 
+Vd: 0b10010001 << 3 => 0b10001000
+- Dịch trái 3 bit = Xóa 3 bit bên trái + Thêm 3 bit 0 bên phải
+
+### Dịch phải (>>): ngược lại với dịch trái
   </details>
+  
+<details>
+  <summary> B5: STRUCT - UNION </summary>
+  
+  # B5: STRUCT - UNION
+  
+  ### Struct:
+  - Dữ liệu của các thành viên của struct được lưu trữ ở những vùng nhớ khác nhau. Do đó kích thước của 1 struct tối thiểu bằng kích thước các thành viên cộng lại tại vì còn phụ thuộc vào bộ nhớ đệm (struct padding).
+  ### Union:
+  - Dữ liệu các thành viên sẽ dùng chung 1 vùng nhớ. Kích thước của union được tính là kích thước lớn nhất của kiểu dữ liệu trong union. Việc thay đổi nội dung của 1 thành viên sẽ dẫn đến thay đổi nội dung của các thành viên khác.
+  </details>
+  
+ <details>
+  <summary> B6: STATIC - EXTERN </summary>
+  
+  #   B6: STATIC - EXTERN
+  
+  ### Staic cục bộ:
+  - Khi 1 biến cục bộ được khai báo với từ khóa static. Biến sẽ chỉ được khởi tạo 1 lần duy nhất và tồn tại suốt thời gian chạy chương trình. Giá trị của nó không bị mất đi ngay cả khi kết thúc hàm. Tuy nhiên khác với biến toàn cục có thể gọi trong tất cả mọi nơi trong chương trình, thì biến cục bộ static chỉ có thể được gọi trong nội bộ hàm khởi tạo ra nó. Mỗi lần hàm được gọi, giá trị của biến chính bằng giá trị tại lần gần nhất hàm được gọi.
+  ### Staic toàn cục:
+  - Biến toàn cục static sẽ chỉ có thể được truy cập và sử dụng trong File khai báo nó, các File khác không có cách nào truy cập được kể cả có sử dụng extern.
+  ### Extern:
+  - Extern dùng để gọi 1 biến từ file này sang file khác để sử dụng.
+  </details>
+
+<details>
+  <summary> B7: POINTER </summary>
+  
+  #  B7: POINTER
+   
+  - Trong ngôn ngữ C/C++, con trỏ (pointer) là những biến lưu trữ địa chỉ bộ nhớ của những biến khác.
+  - Con trỏ chỉ lưu địa chỉ nên kích thước của mọi con trỏ là như nhau. Kích thước này phụ thuộc vào bộ vi xử lý.
+  
+  ### Con trỏ NULL:
+  - Con trỏ NULL là con trỏ lưu địa chỉ 0x00000000. Tức địa chỉ bộ nhớ 0, có ý nghĩa đặc biệt, cho biết con trỏ không trỏ vào đâu cả. Khi khai báo con trỏ mà chưa sử dụng nên gán con trỏ NULL nếu không con trỏ sẽ mang giá trị rác gây ảnh hưởng đến chương trình.
+  
+  ### Con trỏ hàm:
+  - Con trỏ hàm lưu địa chỉ của hàm.
+  - Khai báo:  (kiểu dữ liệu trả về của hàm) (*ptr) (kiểu dữ liệu input parameter của hàm). VD: void (*ptr)(int, int)
+  
+  ### Con trỏ void:
+  - Con trỏ void có thể trỏ đến mọi địa chỉ trong chương trình. Tuy nhiên muốn printf giá trị ta phải ép về kiểu dữ liệu mà con trỏ void đang trỏ tới.
+  
+  ### Pointer to pointer:
+  - Pointer to pointer nghĩa là một con trỏ mà giá trị của nó là địa chỉ của một con trỏ khác.
+  </details>
+
 
 
