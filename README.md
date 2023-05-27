@@ -1,9 +1,13 @@
-# Embedded_Interview_T5
+# Embedded Interview T5
 
-# B1: Compiler
-- Quy trình dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao (NNBC) (C/C++, Pascal, Java, C#…) sang ngôn ngữ đích (ngôn ngữ máy) để máy tính có thể hiểu và thực thi. Ngôn ngữ lập trình C là một ngôn ngữ dạng biên dịch. Chương trình được viết bằng C muốn chạy được trên máy tính phải trải qua một quá trình biên dịch để chuyển đổi từ dạng mã nguồn sang chương trình dạng mã thực thi. Quá trình được chia ra làm 4 giai đoạn chính:
+<details>
+  <summary> B1: COMPILER </summary>
 
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/a7fc4de5-6824-4d8b-8477-aa65b5527daf)
+# B1: COMPILER
+  - Quy trình dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao (NNBC) (C/C++, Pascal, Java, C#…) sang ngôn ngữ đích (ngôn ngữ máy) để máy tính có thể hiểu và thực thi. Ngôn ngữ lập trình C là một ngôn ngữ dạng biên dịch. Chương trình được viết bằng C muốn chạy được trên máy tính phải trải qua một quá trình biên dịch để chuyển đổi từ dạng mã nguồn sang chương trình dạng mã thực thi. Quá trình được chia ra làm 4 giai đoạn chính:
+
+  ![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/fdb50608-eb8b-47ca-a98b-48d05bdaa69a)
+
 
 ### 1. Giai đoạn tiền xử lý (Preprocessor):
 - Nhận mã nguồn
@@ -20,11 +24,14 @@ Ví dụ: chỉ thị #include cho phép ghép thêm mã chương trình của m
 - Trong giai đoạn này mã máy của một chương trình dịch từ nhiều nguồn (file .c hoặc file thư viện .lib) được liên kết lại với nhau để tạo thành chương trình đích duy nhất
 - Mã máy của các hàm thư viện gọi trong chương trình cũng được đưa vào chương trình cuối trong giai đoạn này.
 - Kết thúc quá trình tất cả các đối tượng được liên kết lại với nhau thành một chương trình có thể thực thi được (executable hay .exe) thống nhất.
+</details>
 
+<details>
+  <summary> B2: PHÂN VÙNG NHỚ </summary>
 
-# B2: Phân vùng nhớ
+# B2: PHÂN VÙNG NHỚ
 
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/972bf008-cd8c-400c-90be-087cce24b12f)
+![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/314d30ca-3d7a-487d-bd05-8d7ded7b29fc)
 
 ### 1. Text :
 - Quyền truy cập chỉ Read.
@@ -47,75 +54,45 @@ Ví dụ: chỉ thị #include cho phép ghép thêm mã chương trình của m
 - Sẽ được giải phóng khi gọi hàm free,….
 
 ### So sánh Stack và Heap:
-1. Giống nhau: Bộ nhớ Heap và bộ nhớ Stack bản chất đều cùng là vùng nhớ được tạo ra và lưu trữ trong RAM khi chương trình được thực thi.
-2. Khác nhau:
-- Bộ nhớ Stack được dùng để lưu trữ các biến cục bộ trong hàm, tham số truyền vào... Truy cập vào bộ nhớ này rất nhanh.
-- Bộ nhớ Heap được dùng để lưu trữ vùng nhớ cho những biến con trỏ được cấp phát động bởi các hàm malloc - calloc - realloc. Chậm hơn so với stack.
-- Kích thước của bộ nhớ Stack là cố định, tùy thuộc vào từng hệ điều hành.
-- Kích thước của bộ nhớ Heap là không cố định, có thể tăng giảm do đó đáp ứng được nhu cầu lưu trữ dữ liệu của chương trình.
-- Vùng nhớ Stack được quản lý bởi hệ điều hành, dữ liệu được lưu trong Stack sẽ tự động hủy khi hàm thực hiện xong.
-- Vùng nhớ Heap được quản lý bởi lập trình viên, dữ liệu trong Heap sẽ không bị hủy khi hàm thực hiện xong, phải tự tay hủy vùng nhớ bằng câu lệnh free, nếu không sẽ xảy ra hiện tượng rò rỉ bộ nhớ.
+- Giống nhau: Bộ nhớ Heap và bộ nhớ Stack bản chất đều cùng là vùng nhớ được tạo ra và lưu trữ trong RAM khi chương trình được thực thi.
+- Khác nhau:
 
-# B3: Macro - Function
+|STACK|HEAP|
+|-----|----|
+|Bộ nhớ Stack được dùng để lưu trữ các biến cục bộ trong hàm, tham số truyền vào...|Bộ nhớ Heap được dùng để lưu trữ vùng nhớ cho những biến con trỏ được cấp phát động bởi các hàm malloc - calloc - realloc|
+|Truy cập vào bộ nhớ này rất nhanh|Chậm hơn so với Stack|
+|Kích thước của bộ nhớ Stack là cố định, tùy thuộc vào từng hệ điều hành|Kích thước của bộ nhớ Heap là không cố định, có thể tăng giảm do đó đáp ứng được nhu cầu lưu trữ dữ liệu của chương trình|
+|Vùng nhớ Stack được quản lý bởi hệ điều hành, dữ liệu được lưu trong Stack sẽ tự động hủy khi hàm thực hiện xong|Vùng nhớ Heap được quản lý bởi lập trình viên, dữ liệu trong Heap sẽ không bị hủy khi hàm thực hiện xong, phải tự tay hủy vùng nhớ bằng câu lệnh free, nếu không sẽ xảy ra hiện tượng rò rỉ bộ nhớ|
+  </details>
+  
+<details>
+  <summary> B3: MACRO - FUNCTION </summary>
+  
+  # B3: MACRO - FUNCTION
 
 ### Macro:
 - Được xử lý bởi preprocessor.
 - Thay thế đoạn code được khai báo macro vào bất cứ chỗ nào xuất hiện macro đó.
 - VD: #define SUM(a,b) (a+b).
+- Sử dụng macro chú ý bị lỗi syntax vì macro chỉ được thay thế chứ ko kiểm tra.
 
 ### Function:
 - Được xử lý bởi compiler.
 - Khi thấy hàm được gọi, compiler sẽ phải lưu con trỏ chương trình PC hiện tại vào stack; chuyển PC tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về; sau đó quay lại vị trí ban đầu trong stack trước khi gọi hàm và tiếp tục thực hiện chương trình.
 
 ### So sánh:
-- Macro thường được dùng để thay thế các đoạn code nhỏ hay sử dụng trong chương trình. Sử dụng macro hay bị lỗi syntax vì macro chỉ được thay thế chứ ko kiểm tra.
-- Function thường được dùng cho các đoạn code lớn.
-- Size của file chương trình chứa macro sẽ lớn hơn function nhưng tốc độ chương trình sẽ nhanh hơn.
 
-# B4: Thao tác bit
+|Macro|Function|
+|-----|-----|
+|Được xử lý bởi preprocessor|Được xử lý bởi compiler|
+|Macro thường được dùng để thay thế các đoạn code nhỏ hay sử dụng trong chương trình|Function thường được dùng cho các đoạn code lớn|
+|Size của file chương trình chứa macro sẽ lớn hơn function|Nhỏ hơn|
+|Tốc độ chương trình nhanh hơn|Chậm hơn|
+</deatails>
 
-### Phép AND (&): giống phép nhân
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/acfa8584-a9cd-4d22-9ee5-40bd3ad9c5fb)
-
-### Phép OR (|): giống phép cộng
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/0ebe38ca-cbad-4ae1-b923-cd5604f330e1)
-
-### Phép NOT (~):
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/b8437426-85f7-41c4-b2b7-8f95593d65e4)
-
-### Phép XOR (^): a, b giống nhau => 0, khác nhau => 1
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/2475438d-3fbd-40af-b90c-f321c83d8a20)
-
-### Dịch trái (<<): 
-Vd: 0b10010001 << 3 => 0b10001000
-- Dịch trái 3 bit = Xóa 3 bit bên trái + Thêm 3 bit 0 bên phải
-
-### Dịch phải (>>): ngược lại với dịch trái
-
-# B5: Struct - Union
-
-### 1. Struct:
-
-- Khai báo:
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/e97a8fd5-8693-4063-af91-c0ef576ef530)
-
-- Dữ liệu của các thành viên của struct được lưu trữ ở những vùng nhớ khác nhau. Do đó kích thước của 1 struct tối thiểu bằng kích thước các thành viên cộng lại tại vì còn phụ thuộc vào bộ nhớ đệm (struct padding).
-
-- Ví dụ:
-
-![image](https://github.com/CanhTruongTrong/Embedded_Interview_T5/assets/133849062/e38d01fe-7dfa-41e2-aeed-f81cc323ed01)
-
-### 2. Union:
-
-
-
-
-
-
+<details>
+  <summary> B4: THAO TÁC BIT </summary>
+  
+  </details>
 
 
