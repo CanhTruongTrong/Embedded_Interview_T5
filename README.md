@@ -173,7 +173,7 @@ Vd: 0b10010001 << 3 => 0b10001000
   
   ### Con trỏ hàm:
   - Con trỏ hàm lưu địa chỉ của hàm.
-  - Khai báo:  (kiểu dữ liệu trả về của hàm) (*ptr) (kiểu dữ liệu input parameter của hàm). VD: void (*ptr)(int, int)
+  - Khai báo:  (kiểu dữ liệu trả về của hàm) (* tên con trỏ) (kiểu dữ liệu input parameter của hàm). VD: void (*ptr)(int, int)
   
   ### Con trỏ void:
   - Con trỏ void có thể trỏ đến mọi địa chỉ trong chương trình. Tuy nhiên muốn printf giá trị ta phải ép về kiểu dữ liệu mà con trỏ void đang trỏ tới.
