@@ -22,7 +22,10 @@ void daoTu(char arr[100]){
 }
 
 int main(){
-   char arr[100] = "Mot hai ba bon nam, sau bay tam chin";
+   char arr[100];
+   
+   printf("Nhap chuoi: ");
+   gets(arr);
 
    daoTu(arr);
 }
