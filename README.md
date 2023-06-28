@@ -182,5 +182,26 @@ Vd: 0b10010001 << 3 => 0b10001000
   - Pointer to pointer nghĩa là một con trỏ mà giá trị của nó là địa chỉ của một con trỏ khác.
   </details>
 
+<details>
+  <summary> B9: CLASS </summary>
+  
+  #  B9: CLASS
+   
 
+  </details>
 
+<details>
+  <summary> B10: OOP </summary>
+  
+  #  B10: OOP
+   
+
+  </details>
+
+<details>
+  <summary> B11: VECTOR </summary>
+  
+  #  B11: VECTOR
+   
+
+  </details>
