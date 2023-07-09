@@ -1,7 +1,7 @@
 /*
 * File: main.cpp
 * Author: Truong Trong Canh
-* Date: 08/07/2023
+* Date: 06/07/2023
 * Description: This is a sample file for ordering food
 */
 
