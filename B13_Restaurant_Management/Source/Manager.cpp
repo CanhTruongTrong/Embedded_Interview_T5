@@ -1,130 +1,11 @@
 /*
-* File: main.cpp
+* File: Manager.cpp
 * Author: Truong Trong Canh
-* Date: 06/07/2023
-* Description: This is a sample file for ordering food
+* Date: 11/7/2023
+* Description: This is a sample file for set information from manager
 */
 
-#include <iostream>
-#include <stdint.h>
-#include <string>
-#include <list>
-
-using namespace std;
-
-/*-----------------Class Food------------------*/
-class Food{
-    private:
-        int Id;
-        string name;
-        double price;
-    public:
-        Food(string n, double p);
-        int getId();
-        void setName(string n);
-        string getName();
-        void setPrice(double p);
-        double getPrice();
-        void display();
-};
-
-Food::Food(string n, double p){
-    static int id = 100;
-    Id = id;
-    id++;
-    name = n;
-    price = p;
-}
-
-/*
-* Function: getId
-* Description: This function gets Id of food
-* Input:
-    None
-* Output:
-    return Id of food
-*/
-int Food::getId(){
-    return Id;
-}
-
-/*
-* Function: setName
-* Description: This function sets name of food
-* Input:
-    n - name of food
-* Output:
-    None
-*/
-void Food::setName(string n){
-    name = n;
-}
-
-/*
-* Function: getName
-* Description: This function gets name of food
-* Input:
-    None
-* Output:
-    return name of food
-*/
-string Food::getName(){
-    return name;
-}
-
-/*
-* Function: setPrice
-* Description: This function sets price of food
-* Input:
-    n - price of food
-* Output:
-    None
-*/
-void Food::setPrice(double p){
-    price = p;
-}
-
-/*
-* Function: getPrice
-* Description: This function gets price of food
-* Input:
-    None
-* Output:
-    return price of food
-*/
-double Food::getPrice(){
-    return price;
-}
-
-/*
-* Function: display
-* Description: This function displays food
-* Input:
-    None
-* Output:
-    None
-*/
-void Food::display(){
-    cout << "-----------------------" << endl;
-    cout << " ID   | Name     | Price  " << endl;
-    cout << " " << getId() << "    " << getName() << "       " << getPrice() << endl;
-}
-
-/*---------------------------------Class Manager------------------------------*/
-class Manager{
-    private:
-        list <Food> Database;
-        int numTable;
-        void addFood();
-        void editFood();
-        void deleteFood();
-        void listFood();
-        void setNumTable();
-    public:
-        Manager();
-        list <Food> getDatabase();
-        int getNumTable();
-};
+#include "Manager.hpp"
 
 Manager::Manager(){
     cout << "---------------Manager-----------------" << endl;
@@ -153,16 +34,16 @@ Manager::Manager(){
         editFood();
         break;
     case 3:
-        // delete food
+        deleteFood();
         break;
     case 4:
         listFood();
         break;
     case 5:
-        // set up table
+        setNumTable();
         break;
     case 0:
-        // back Manager()
+        Manager();
         break;
     }
 }
@@ -380,109 +261,4 @@ void Manager::setNumTable(){
         Manager();
         break;
     }
-}
-/*-------------------------Class TableInformation-----------------------*/
-class TableInformation{
-    private:
-        int numTable;
-        bool status;
-        typedef struct{
-            Food food;
-            int quantity;
-        }TypeFood;
-        list <TypeFood> Database_Food;
-    public:
-        TableInformation(int nT, bool stt);
-        int getNumTable();
-        void setStatus(bool stt);
-        bool getStatus();
-        void listFood();
-        void addFood();
-        void editFood();
-        void deleteFood();
-        void pay();
-        
-};
-
-TableInformation::TableInformation(int nT, bool stt){
-    numTable = nT;
-    status = stt;
-}
-
-/*
-* Function: getNumTable
-* Description: This function gets the number of tables
-* Input:
-    None
-* Output:
-    return the number of tables
-*/
-int TableInformation::getNumTable(){
-    return numTable;
-}
-
-/*
-* Function: setStatus
-* Description: This function sets status of table
-* Input:
-    stt - status of table
-* Output:
-    None
-*/
-void TableInformation::setStatus(bool stt){
-    status = stt;
-}
-
-/*
-* Function: getStatus
-* Description: This function gets status of table
-* Input:
-    None
-* Output:
-    return the status of table
-*/
-bool TableInformation::getStatus(){
-    return status;
-}
-
-
-
-/*--------------------------Class Staff----------------------------------*/
-class Staff{
-    private:
-        list <Food> Database_Food;
-        typedef struct{
-            int numTable;
-            bool status;
-        }TypeTable;
-    public:
-        Staff(list <Food> database, int nT);
-};
-
-int main(){
-    
-    cout << "--------------" << endl;
-    cout << " 1. Manager" << endl;
-    cout << " 2. Staff" << endl;
-
-    int input;
-    
-    do
-    {
-        cout << "You choose: " << endl;
-        cin >> input;
-    } while (input < 1 || input > 2);
-
-
-    switch (input)
-    {
-    case 1:
-        // Manager
-        break;
-    case 2:
-        // Staff
-        break;
-    }
-
-    return 0;
 }
